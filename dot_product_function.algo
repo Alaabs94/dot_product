@@ -1,0 +1,35 @@
+FUNCTION dot_product(v1,v2:array of float,n:integer) : return_type
+VAR
+    i:integer;
+    ps:float;
+    n:v1.length,v2.length;
+BEGIN
+      ps:=0;
+    FOR i FROM 0 TO n-1 step 1 DO
+        ps=ps+(v1[i]*v2[i]);
+    END_FOR
+    RETURN ps ;
+END
+
+ALGORITHM main
+VAR
+    v1,v2:array of float[];
+    i,n:integer;
+BEGIN
+    read(n);
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v1[i]);
+    END_FOR
+
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        read(v2[i]);
+    END_FOR
+
+    write(dot_product(v1,v2,n));
+    
+    IF (ps=0) THEN
+        write(v1," and ", v2 ," are orthogonal");
+    else
+         write(v1," and ", v2 ," are not orthogonal");
+    END_IF
+END
